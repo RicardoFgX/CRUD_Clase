@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "3b73c7ca-b0bf-4296-924e-d97780c4b247",
+		"name": "API Tarea 6",
+		"description": "API para la resolución de la Tarea 6 realizada en clase. Se trata de un CRUD sencillo de Usuarios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31929458"
+	},
+	"item": [
+		{
+			"name": "Obtener Todos los Usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api}}{{Usuario}}",
+					"host": [
+						"{{host}}{{api}}{{Usuario}}"
+					]
+				},
+				"description": "Solicitud GET que devuelve una lista con todos los Usuarios"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Un Usuario Por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api}}{{Usuario}}/1",
+					"host": [
+						"{{host}}{{api}}{{Usuario}}"
+					],
+					"path": [
+						"1"
+					]
+				},
+				"description": "Solicitud GET que devuelve un Usuario por ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un Usuario por ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api}}{{Usuario}}/2",
+					"host": [
+						"{{host}}{{api}}{{Usuario}}"
+					],
+					"path": [
+						"2"
+					]
+				},
+				"description": "Solicitud DELETE que borra a un Usuario con una ID concreta de la base de datos"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un nuevo Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"UsuarioNuevo1\",\r\n    \"apellido\": \"ApellidoEjemplo1\",\r\n    \"email\": \"emailDEjemplo@gmail.com\",\r\n    \"fechaDeCreacion\": \"2024-01-15T08:57:57.411214\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api}}{{Usuario}}",
+					"host": [
+						"{{host}}{{api}}{{Usuario}}"
+					]
+				},
+				"description": "Solicitud POST que crea a un Nuevo Usuario en la base de datos. Se pasa por parámetro el nuevo usuario"
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"UsuarioActualizado\",\r\n    \"apellido\": \"Perez\",\r\n    \"email\": \"nuevoCorreo@gmail.com\",\r\n    \"fechaDeCreacion\": \"2024-01-15T08:57:57.411214\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api}}{{Usuario}}/1",
+					"host": [
+						"{{host}}{{api}}{{Usuario}}"
+					],
+					"path": [
+						"1"
+					]
+				},
+				"description": "Solicitud PUT que actualiza a un Usuario existente con una ID concreta en la base de datos. Se pasa por parámetro el Usuario actualizado"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "api",
+			"value": "/api",
+			"type": "string"
+		},
+		{
+			"key": "Usuario",
+			"value": "/usuarios",
+			"type": "string"
+		}
+	]
+}
